@@ -84,6 +84,7 @@
             this.confirmButton.TabIndex = 4;
             this.confirmButton.Text = "Подтвердить";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // backButton
             // 
@@ -93,6 +94,7 @@
             this.backButton.TabIndex = 5;
             this.backButton.Text = "Назад";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // FormResizeImage
             // 
