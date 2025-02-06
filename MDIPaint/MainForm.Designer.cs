@@ -70,6 +70,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLabelColor = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -102,7 +103,7 @@
             this.toolStripSeparator2,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 32);
             this.файлToolStripMenuItem.Text = "&Файл";
             this.файлToolStripMenuItem.DropDownOpening += new System.EventHandler(this.файлToolStripMenuItem_DropDownOpening);
             // 
@@ -110,7 +111,7 @@
             // 
             this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
             this.новыйToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(341, 34);
             this.новыйToolStripMenuItem.Text = "&Новый";
             this.новыйToolStripMenuItem.Click += new System.EventHandler(this.новыйToolStripMenuItem_Click);
             // 
@@ -125,7 +126,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(338, 6);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -147,13 +148,13 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(338, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(341, 34);
             this.выходToolStripMenuItem.Text = "&Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -162,14 +163,16 @@
             this.рисунокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.размерХолстаToolStripMenuItem});
             this.рисунокToolStripMenuItem.Name = "рисунокToolStripMenuItem";
-            this.рисунокToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
+            this.рисунокToolStripMenuItem.Size = new System.Drawing.Size(95, 30);
             this.рисунокToolStripMenuItem.Text = "&Рисунок";
             // 
             // размерХолстаToolStripMenuItem
             // 
             this.размерХолстаToolStripMenuItem.Name = "размерХолстаToolStripMenuItem";
-            this.размерХолстаToolStripMenuItem.Size = new System.Drawing.Size(231, 34);
+            this.размерХолстаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.размерХолстаToolStripMenuItem.Size = new System.Drawing.Size(293, 34);
             this.размерХолстаToolStripMenuItem.Text = "&Размер холста";
+            this.размерХолстаToolStripMenuItem.Click += new System.EventHandler(this.размерХолстаToolStripMenuItem_Click);
             // 
             // окноToolStripMenuItem
             // 
@@ -192,14 +195,16 @@
             // слеваНаправоToolStripMenuItem
             // 
             this.слеваНаправоToolStripMenuItem.Name = "слеваНаправоToolStripMenuItem";
-            this.слеваНаправоToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
+            this.слеваНаправоToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.слеваНаправоToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
             this.слеваНаправоToolStripMenuItem.Text = "&Слева направо";
             this.слеваНаправоToolStripMenuItem.Click += new System.EventHandler(this.слеваНаправоToolStripMenuItem_Click);
             // 
             // сверхуВнизToolStripMenuItem
             // 
             this.сверхуВнизToolStripMenuItem.Name = "сверхуВнизToolStripMenuItem";
-            this.сверхуВнизToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
+            this.сверхуВнизToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.сверхуВнизToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
             this.сверхуВнизToolStripMenuItem.Text = "&Сверху вниз";
             this.сверхуВнизToolStripMenuItem.Click += new System.EventHandler(this.сверхуВнизToolStripMenuItem_Click);
             // 
@@ -215,14 +220,15 @@
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(97, 29);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(97, 30);
             this.справкаToolStripMenuItem.Text = "&Справка";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
-            this.оПрограммеToolStripMenuItem.Text = "О программе...";
+            this.оПрограммеToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.оПрограммеToolStripMenuItem.Text = "&О программе...";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // toolStrip1
@@ -261,7 +267,7 @@
             this.selectGreenColor.Image = global::MDIPaint.Properties.Resources.GreenColorIcon;
             this.selectGreenColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectGreenColor.Name = "selectGreenColor";
-            this.selectGreenColor.Size = new System.Drawing.Size(34, 29);
+            this.selectGreenColor.Size = new System.Drawing.Size(34, 33);
             this.selectGreenColor.Text = "selectGreenColor";
             this.selectGreenColor.ToolTipText = "Выбрать зелёный цвет";
             this.selectGreenColor.Click += new System.EventHandler(this.toolStripButton2_Click);
@@ -272,7 +278,7 @@
             this.selectBlueColor.Image = global::MDIPaint.Properties.Resources.BlueColorIcon;
             this.selectBlueColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectBlueColor.Name = "selectBlueColor";
-            this.selectBlueColor.Size = new System.Drawing.Size(34, 29);
+            this.selectBlueColor.Size = new System.Drawing.Size(34, 33);
             this.selectBlueColor.Text = "selectBlueColor";
             this.selectBlueColor.ToolTipText = "Выбрать синий цвет";
             this.selectBlueColor.Click += new System.EventHandler(this.toolStripButton3_Click);
@@ -283,7 +289,7 @@
             this.selectAnyColor.Image = global::MDIPaint.Properties.Resources.ColorSelectionIcon;
             this.selectAnyColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectAnyColor.Name = "selectAnyColor";
-            this.selectAnyColor.Size = new System.Drawing.Size(34, 29);
+            this.selectAnyColor.Size = new System.Drawing.Size(34, 33);
             this.selectAnyColor.Text = "selectAnyColor";
             this.selectAnyColor.ToolTipText = "Выбрать любой цвет";
             this.selectAnyColor.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -305,7 +311,7 @@
             this.choosePenWidth.Image = global::MDIPaint.Properties.Resources.SizeIcon;
             this.choosePenWidth.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.choosePenWidth.Name = "choosePenWidth";
-            this.choosePenWidth.Size = new System.Drawing.Size(42, 29);
+            this.choosePenWidth.Size = new System.Drawing.Size(42, 33);
             this.choosePenWidth.Text = "choosePenWidth";
             this.choosePenWidth.ToolTipText = "Выбрать размер кисти";
             this.choosePenWidth.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
@@ -383,7 +389,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 34);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
             // 
             // choosePen
             // 
@@ -391,7 +397,7 @@
             this.choosePen.Image = ((System.Drawing.Image)(resources.GetObject("choosePen.Image")));
             this.choosePen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.choosePen.Name = "choosePen";
-            this.choosePen.Size = new System.Drawing.Size(60, 29);
+            this.choosePen.Size = new System.Drawing.Size(60, 33);
             this.choosePen.Text = "Перо";
             this.choosePen.ToolTipText = "Выбрать инструмент перо";
             this.choosePen.Click += new System.EventHandler(this.choosePen_Click);
@@ -402,7 +408,7 @@
             this.chooseCircle.Image = ((System.Drawing.Image)(resources.GetObject("chooseCircle.Image")));
             this.chooseCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseCircle.Name = "chooseCircle";
-            this.chooseCircle.Size = new System.Drawing.Size(117, 29);
+            this.chooseCircle.Size = new System.Drawing.Size(117, 33);
             this.chooseCircle.Text = "Окружность";
             this.chooseCircle.ToolTipText = "Выбрать инструмент окружность";
             this.chooseCircle.Click += new System.EventHandler(this.chooseCircle_Click);
@@ -413,7 +419,7 @@
             this.chooseRectangle.Image = ((System.Drawing.Image)(resources.GetObject("chooseRectangle.Image")));
             this.chooseRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseRectangle.Name = "chooseRectangle";
-            this.chooseRectangle.Size = new System.Drawing.Size(147, 29);
+            this.chooseRectangle.Size = new System.Drawing.Size(147, 33);
             this.chooseRectangle.Text = "Прямоугольник";
             this.chooseRectangle.ToolTipText = "Выбрать инструмент прямоугольник";
             this.chooseRectangle.Click += new System.EventHandler(this.chooseRectangle_Click);
@@ -423,6 +429,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabelSize,
+            this.statusLabelColor,
             this.statusLabelPosition});
             this.statusStrip1.Location = new System.Drawing.Point(0, 418);
             this.statusStrip1.Name = "statusStrip1";
@@ -440,6 +447,12 @@
             // 
             this.statusLabelPosition.Name = "statusLabelPosition";
             this.statusLabelPosition.Size = new System.Drawing.Size(0, 25);
+            // 
+            // statusLabelColor
+            // 
+            this.statusLabelColor.Name = "statusLabelColor";
+            this.statusLabelColor.Size = new System.Drawing.Size(144, 25);
+            this.statusLabelColor.Text = "Цвет пера: Black";
             // 
             // MainForm
             // 
@@ -509,6 +522,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusLabelSize;
         private System.Windows.Forms.ToolStripStatusLabel statusLabelPosition;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabelColor;
     }
 }
 

@@ -13,8 +13,17 @@ namespace MDIPaint
 {
     public partial class MainForm : Form
     {
-        public static Color CurrentColor { get; set; }
+        private static Color currentColor;
         private static int currentWidth;
+        public static Color CurrentColor 
+        {
+            get { return currentColor; }
+            set
+            {
+                currentColor = value;
+                ShowColor();
+            }
+        }
         public static int CurrentWidth
         {
             get { return currentWidth; }
@@ -220,6 +229,13 @@ namespace MDIPaint
                 mainForm.statusLabelSize.Text = $"Размер пера: {CurrentWidth}";
         }
 
+        public static void ShowColor()
+        {
+            var mainForm = Application.OpenForms["MainForm"] as MainForm;
+            if (mainForm != null)
+                mainForm.statusLabelColor.Text = $"Цвет пера: {CurrentColor.Name}";
+        }
+
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new OpenFileDialog())
@@ -231,12 +247,15 @@ namespace MDIPaint
                 {
                     try
                     {
-                        var bmp = new Bitmap(dlg.FileName);
-                        var d = new FormDocument(bmp);
-                        d.Text = dlg.FileName;
-                        d.CurrentPath = dlg.FileName;
-                        d.MdiParent = this;
-                        d.Show();
+                        using (var originalBmp = new Bitmap(dlg.FileName))
+                        {
+                            var bmp = new Bitmap(originalBmp);
+                            var d = new FormDocument(bmp);
+                            d.Text = dlg.FileName;
+                            d.CurrentPath = dlg.FileName;
+                            d.MdiParent = this;
+                            d.Show();
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -266,6 +285,29 @@ namespace MDIPaint
         {
             сохранитьToolStripMenuItem.Enabled = true;
             сохранитьКакToolStripMenuItem.Enabled = true;
+        }
+
+        private void размерХолстаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var d = ActiveMdiChild as FormDocument;
+            if (d != null)
+            {
+                var dlg = new FormResizeImage(d.Canvas.Width, d.Canvas.Height, d.ClientSize.Width, d.ClientSize.Height);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        if (dlg.CanvasWidth != d.Canvas.Width && dlg.CanvasHeight != d.Canvas.Height)
+                        {
+                            d.ResizeCanvas(dlg.CanvasWidth, dlg.CanvasHeight);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка при изменении размера изображения: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

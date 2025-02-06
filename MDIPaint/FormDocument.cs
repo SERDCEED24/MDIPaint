@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,33 @@ namespace MDIPaint
         Bitmap bitmapTemp;
         private Stopwatch sw = new Stopwatch();
         public string CurrentPath { get; set; }
+        public Bitmap Canvas
+        {
+            get
+            {
+                return bitmap;
+            }
+            set
+            {
+                bitmap = value;
+            }
+        }
+        public Bitmap CanvasTemp
+        {
+            get
+            {
+                return bitmapTemp;
+            }
+            set
+            {
+                bitmapTemp = value;
+            }
+        }
         public FormDocument()
         {
             InitializeComponent();
             bitmap = new Bitmap(ClientSize.Width, ClientSize.Height);
-            bitmapTemp = bitmap;
+            bitmapTemp = new Bitmap(bitmap);
             CurrentPath = null;
         }
 
@@ -31,7 +54,7 @@ namespace MDIPaint
         {
             InitializeComponent();
             bitmap = bmp;
-            bitmapTemp = bmp;
+            bitmapTemp = new Bitmap(bmp);
         }
 
         private void FormDocument_Load(object sender, EventArgs e)
@@ -52,37 +75,55 @@ namespace MDIPaint
         {
             if (e.Button == MouseButtons.Left)
             {
-                var pen = new Pen(MainForm.CurrentColor, MainForm.CurrentWidth);
-                switch (MainForm.CurrentTool)
+                using (var pen = new Pen(MainForm.CurrentColor, MainForm.CurrentWidth))
                 {
-                    case Tools.Pen:
-                        using (var g = Graphics.FromImage(bitmap))
-                        {
-                            g.DrawLine(pen, x, y, e.X, e.Y);
-                        }
-                        x = e.X;
-                        y = e.Y;
-                        bitmapTemp = bitmap;
-                        break;
+                    using (var g = Graphics.FromImage(bitmapTemp))
+                    {
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        g.CompositingQuality = CompositingQuality.HighQuality;
+                        var gTemp = Graphics.FromImage(bitmapTemp);
 
-                    case Tools.Circle:
-                        bitmapTemp = (Bitmap)bitmap.Clone();
-                        using (var g = Graphics.FromImage(bitmapTemp))
+                        gTemp.SmoothingMode = SmoothingMode.AntiAlias;
+                        gTemp.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        gTemp.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        gTemp.CompositingQuality = CompositingQuality.HighQuality;
+                        switch (MainForm.CurrentTool)
                         {
-                            g.DrawEllipse(pen, new Rectangle(x, y, e.X - x, e.Y - y));
-                        }
-                        break;
+                            case Tools.Pen:
+                                //g.DrawLine(pen, x, y, e.X, e.Y);
+                                gTemp.DrawLine(pen, x, y, e.X, e.Y);
+                                x = e.X;
+                                y = e.Y;
+                                //gTemp.Clear(Color.Transparent);
+                                //gTemp.DrawImage(bitmap, 0, 0);
+                                break;
 
-                    case Tools.Rectangle:
-                        bitmapTemp = (Bitmap)bitmap.Clone();
-                        using (var g = Graphics.FromImage(bitmapTemp))
-                        {
-                            g.DrawRectangle(pen, new Rectangle(x, y, e.X - x, e.Y - y));
+                            case Tools.Circle:
+                                //gTemp.Clear(Color.Transparent);
+                                //gTemp.DrawImage(bitmap, 0, 0);
+                                bitmapTemp = (Bitmap)bitmap.Clone();
+                                gTemp = Graphics.FromImage(bitmapTemp);
+                                gTemp.DrawEllipse(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                                break;
+
+                            case Tools.Rectangle:
+                                //gTemp.Clear(Color.Transparent);
+                                //gTemp.DrawImage(bitmap, 0, 0);
+                                bitmapTemp = (Bitmap)bitmap.Clone();
+                                using (gTemp = Graphics.FromImage(bitmapTemp))
+                                {
+                                    gTemp.DrawRectangle(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                                }
+                                break;
                         }
-                        break;
-                }   
+
+                    }
+                }
                 Invalidate();
             }
+            /*
             var parent = MdiParent as MainForm;
             if (parent != null && (e.X != x || e.Y != y))
             {
@@ -94,15 +135,16 @@ namespace MDIPaint
                     parent.ShowPosition(e.X, e.Y);
                 }
             }
+            */
         }
 
         private void FormDocument_MouseUp(object sender, MouseEventArgs e)
         {
-            if (MainForm.CurrentTool != Tools.Pen)
+            using (var g = Graphics.FromImage(bitmap))
             {
-                bitmap = bitmapTemp;
-                Invalidate();
+                g.DrawImage(bitmapTemp, 0, 0);
             }
+            Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -121,5 +163,20 @@ namespace MDIPaint
         {
             bitmap.Save(path);
         }
+        public void ResizeCanvas(int newWidth, int newHeight)
+        {
+            Bitmap newBitmap = new Bitmap(newWidth, newHeight);
+            using (Graphics g = Graphics.FromImage(newBitmap))
+            {
+                g.Clear(Color.Transparent);
+                g.DrawImage(bitmap, 0, 0);
+            }
+
+            bitmap.Dispose();
+            bitmap = newBitmap;
+            bitmapTemp = new Bitmap(bitmap);
+            Invalidate();
+        }
+
     }
 }
