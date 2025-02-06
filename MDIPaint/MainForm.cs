@@ -309,5 +309,25 @@ namespace MDIPaint
                 }
             }
         }
+
+        private void chooseEraser_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.Eraser;
+        }
+
+        private void chooseLine_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.Line;
+        }
+
+        private void chooseFilledCircle_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.FilledCircle;
+        }
+
+        private void chooseFilledRectangle_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.FilledRectangle;
+        }
     }
 }

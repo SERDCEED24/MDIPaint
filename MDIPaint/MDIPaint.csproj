@@ -121,7 +121,28 @@
     <None Include="Resources\ColorSelectionIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SizeIcon.png" />
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dry-clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagonal-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangular-shape-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangleF.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

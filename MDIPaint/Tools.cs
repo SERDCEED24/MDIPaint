@@ -22,6 +22,22 @@ namespace MDIPaint
         /// <summary>
         /// Прямоугольник
         /// </summary>
-        Rectangle
+        Rectangle,
+        /// <summary>
+        /// Ластик
+        /// </summary>
+        Eraser,
+        /// <summary>
+        /// Линия
+        /// </summary>
+        Line,
+        /// <summary>
+        /// Закрашенная окружность
+        /// </summary>
+        FilledCircle,
+        /// <summary>
+        /// Закрашенный прямоугольник
+        /// </summary>
+        FilledRectangle
     }
 }

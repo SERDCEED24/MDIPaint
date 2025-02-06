@@ -46,6 +46,10 @@ namespace MDIPaint
         {
             InitializeComponent();
             bitmap = new Bitmap(ClientSize.Width, ClientSize.Height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.Clear(Color.White);
+            }
             bitmapTemp = new Bitmap(bitmap);
             CurrentPath = null;
         }
@@ -102,6 +106,35 @@ namespace MDIPaint
                             bitmapTemp = (Bitmap)bitmap.Clone();
                             g = Graphics.FromImage(bitmapTemp);
                             g.DrawRectangle(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                            break;
+                        case Tools.Eraser:
+                            g = Graphics.FromImage(bitmapTemp);
+                            int eraserRadius = MainForm.CurrentWidth * 3;
+                            using (var eraserBrush = new SolidBrush(Color.White))
+                            {
+                                g.FillEllipse(eraserBrush, e.X - eraserRadius / 2, e.Y - eraserRadius / 2, eraserRadius, eraserRadius);
+                            }
+                            break;
+                        case Tools.Line:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            g.DrawLine(pen, x, y, e.X, e.Y);
+                            break;
+                        case Tools.FilledRectangle:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            using (var brush = new SolidBrush(MainForm.CurrentColor))
+                            {
+                                g.FillRectangle(brush, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                            }
+                            break;
+                        case Tools.FilledCircle:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            using (var brush = new SolidBrush(MainForm.CurrentColor))
+                            {
+                                g.FillEllipse(brush, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                            }
                             break;
                     }
 
