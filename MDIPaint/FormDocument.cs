@@ -77,65 +77,47 @@ namespace MDIPaint
             {
                 using (var pen = new Pen(MainForm.CurrentColor, MainForm.CurrentWidth))
                 {
-                    using (var g = Graphics.FromImage(bitmapTemp))
+                    var g = Graphics.FromImage(bitmapTemp);
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+
+                    switch (MainForm.CurrentTool)
                     {
-                        g.SmoothingMode = SmoothingMode.AntiAlias;
-                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                        g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                        g.CompositingQuality = CompositingQuality.HighQuality;
-                        var gTemp = Graphics.FromImage(bitmapTemp);
+                        case Tools.Pen:
+                            g = Graphics.FromImage(bitmapTemp);
+                            g.DrawLine(pen, x, y, e.X, e.Y);
+                            x = e.X;
+                            y = e.Y;
+                            break;
 
-                        gTemp.SmoothingMode = SmoothingMode.AntiAlias;
-                        gTemp.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                        gTemp.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                        gTemp.CompositingQuality = CompositingQuality.HighQuality;
-                        switch (MainForm.CurrentTool)
-                        {
-                            case Tools.Pen:
-                                //g.DrawLine(pen, x, y, e.X, e.Y);
-                                gTemp.DrawLine(pen, x, y, e.X, e.Y);
-                                x = e.X;
-                                y = e.Y;
-                                //gTemp.Clear(Color.Transparent);
-                                //gTemp.DrawImage(bitmap, 0, 0);
-                                break;
+                        case Tools.Circle:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            g.DrawEllipse(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                            break;
 
-                            case Tools.Circle:
-                                //gTemp.Clear(Color.Transparent);
-                                //gTemp.DrawImage(bitmap, 0, 0);
-                                bitmapTemp = (Bitmap)bitmap.Clone();
-                                gTemp = Graphics.FromImage(bitmapTemp);
-                                gTemp.DrawEllipse(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
-                                break;
-
-                            case Tools.Rectangle:
-                                //gTemp.Clear(Color.Transparent);
-                                //gTemp.DrawImage(bitmap, 0, 0);
-                                bitmapTemp = (Bitmap)bitmap.Clone();
-                                using (gTemp = Graphics.FromImage(bitmapTemp))
-                                {
-                                    gTemp.DrawRectangle(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
-                                }
-                                break;
-                        }
-
+                        case Tools.Rectangle:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            g.DrawRectangle(pen, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
+                            break;
                     }
+
                 }
                 Invalidate();
             }
-            /*
+
             var parent = MdiParent as MainForm;
             if (parent != null && (e.X != x || e.Y != y))
             {
                 if (!sw.IsRunning || sw.ElapsedMilliseconds > 20) // Обновление координат в статус баре раз в 20 мс
                 {
-                    x = e.X;
-                    y = e.Y;
                     sw.Restart();
                     parent.ShowPosition(e.X, e.Y);
                 }
             }
-            */
         }
 
         private void FormDocument_MouseUp(object sender, MouseEventArgs e)

@@ -35,9 +35,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.DoubleBuffered = true;
             this.Name = "FormDocument";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Безымянный документ";
             this.Load += new System.EventHandler(this.FormDocument_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDocument_MouseDown);
