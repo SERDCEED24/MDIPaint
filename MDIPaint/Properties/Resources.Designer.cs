@@ -81,6 +81,16 @@ namespace MDIPaint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] circle_cursor {
+            get {
+                object obj = ResourceManager.GetObject("circle_cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ColorSelectionIcon {
@@ -121,12 +131,42 @@ namespace MDIPaint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] eraser_cursor {
+            get {
+                object obj = ResourceManager.GetObject("eraser_cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap feather {
             get {
                 object obj = ResourceManager.GetObject("feather", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] filled_circle_cursor {
+            get {
+                object obj = ResourceManager.GetObject("filled_circle_cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] filled_rectangle_cursor {
+            get {
+                object obj = ResourceManager.GetObject("filled_rectangle_cursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -141,12 +181,32 @@ namespace MDIPaint.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap rectangle {
+        internal static byte[] line_cursor {
             get {
-                object obj = ResourceManager.GetObject("rectangle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("line_cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pen_cursor {
+            get {
+                object obj = ResourceManager.GetObject("pen_cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rectangle_cursor {
+            get {
+                object obj = ResourceManager.GetObject("rectangle_cursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -186,16 +246,6 @@ namespace MDIPaint.Properties {
         internal static System.Drawing.Bitmap ruler {
             get {
                 object obj = ResourceManager.GetObject("ruler", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SizeIcon {
-            get {
-                object obj = ResourceManager.GetObject("SizeIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -139,14 +139,8 @@
   <data name="BlueColorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlueColorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RedColorIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedColorIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SizeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SizeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColorSelectionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorSelectionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,5 +153,26 @@
   </data>
   <data name="rectangleF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rectangleF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="eraser_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eraser_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="filled_circle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filled_circle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="filled_rectangle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filled_rectangle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="line_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\line_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pen_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pen_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rectangle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rectangle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

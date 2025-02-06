@@ -42,6 +42,7 @@
             this.Text = "Безымянный документ";
             this.Load += new System.EventHandler(this.FormDocument_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDocument_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.FormDocument_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.FormDocument_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormDocument_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormDocument_MouseUp);

@@ -15,6 +15,7 @@ namespace MDIPaint
     {
         private static Color currentColor;
         private static int currentWidth;
+        private static Tools currentTool;
         public static Color CurrentColor 
         {
             get { return currentColor; }
@@ -33,8 +34,18 @@ namespace MDIPaint
                 ShowSize();
             }
         }
-
-        public static Tools CurrentTool { get; set; }
+        public static Tools CurrentTool
+        {
+            get
+            {
+                return currentTool;
+            }
+            set
+            {
+                currentTool = value;
+                //ShowCursor();
+            }
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -236,6 +247,19 @@ namespace MDIPaint
                 mainForm.statusLabelColor.Text = $"Цвет пера: {CurrentColor.Name}";
         }
 
+        public static void ShowCursor()
+        {
+            var mainForm = Application.OpenForms["MainForm"] as MainForm;
+            if (mainForm != null)
+            {
+                var d = mainForm.ActiveMdiChild as FormDocument;
+                if (d != null)
+                {
+                    d.UpdateCursor();
+                }
+            }
+        }
+
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new OpenFileDialog())
@@ -285,6 +309,11 @@ namespace MDIPaint
         {
             сохранитьToolStripMenuItem.Enabled = true;
             сохранитьКакToolStripMenuItem.Enabled = true;
+            размерХолстаToolStripMenuItem.Enabled = true;
+            каскадомToolStripMenuItem.Enabled = true;
+            слеваНаправоToolStripMenuItem.Enabled = true;
+            сверхуВнизToolStripMenuItem.Enabled = true;
+            упорядочитьЗначкиToolStripMenuItem.Enabled = true;
         }
 
         private void размерХолстаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,6 +357,21 @@ namespace MDIPaint
         private void chooseFilledRectangle_Click(object sender, EventArgs e)
         {
             CurrentTool = Tools.FilledRectangle;
+        }
+
+        private void рисунокToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            var d = ActiveMdiChild as FormDocument;
+            размерХолстаToolStripMenuItem.Enabled = d != null;
+        }
+
+        private void окноToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            var d = ActiveMdiChild as FormDocument;
+            каскадомToolStripMenuItem.Enabled = d != null;
+            слеваНаправоToolStripMenuItem.Enabled = d != null;
+            сверхуВнизToolStripMenuItem.Enabled = d != null;
+            упорядочитьЗначкиToolStripMenuItem.Enabled = d != null;
         }
     }
 }

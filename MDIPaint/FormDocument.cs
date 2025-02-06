@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MDIPaint.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -191,6 +192,42 @@ namespace MDIPaint
             bitmap = newBitmap;
             bitmapTemp = new Bitmap(bitmap);
             Invalidate();
+        }
+
+        private void FormDocument_MouseEnter(object sender, EventArgs e)
+        {
+            UpdateCursor();
+        }
+
+        public void UpdateCursor()
+        {
+            switch (MainForm.CurrentTool)
+            {
+                case Tools.Pen:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.pen_cursor));
+                    break;
+                case Tools.Circle:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.circle_cursor));
+                    break;
+                case Tools.FilledCircle:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.filled_circle_cursor));
+                    break;
+                case Tools.Rectangle:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.rectangle_cursor));
+                    break;
+                case Tools.FilledRectangle:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.filled_rectangle_cursor));
+                    break;
+                case Tools.Eraser:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.eraser_cursor));
+                    break;
+                case Tools.Line:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.line_cursor));
+                    break;
+                default:
+                    this.Cursor = Cursors.Default;
+                    break;
+            }
         }
 
     }

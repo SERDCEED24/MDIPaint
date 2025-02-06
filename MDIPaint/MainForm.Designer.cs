@@ -169,6 +169,7 @@
             this.рисунокToolStripMenuItem.Name = "рисунокToolStripMenuItem";
             this.рисунокToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.рисунокToolStripMenuItem.Text = "&Рисунок";
+            this.рисунокToolStripMenuItem.DropDownOpening += new System.EventHandler(this.рисунокToolStripMenuItem_DropDownOpening);
             // 
             // размерХолстаToolStripMenuItem
             // 
@@ -188,6 +189,7 @@
             this.окноToolStripMenuItem.Name = "окноToolStripMenuItem";
             this.окноToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.окноToolStripMenuItem.Text = "&Окно";
+            this.окноToolStripMenuItem.DropDownOpening += new System.EventHandler(this.окноToolStripMenuItem_DropDownOpening);
             // 
             // каскадомToolStripMenuItem
             // 
