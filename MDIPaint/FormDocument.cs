@@ -20,6 +20,18 @@ namespace MDIPaint
         Bitmap bitmap;
         Bitmap bitmapTemp;
         private Stopwatch sw = new Stopwatch();
+        private bool isModified = false;
+        private float currentScaling = 1.0f;
+        public float CurrentScaling
+        {
+            get { return currentScaling; }
+            set
+            {
+                if (value < 0.1f || value > 10f) return;
+                currentScaling = value;
+                Invalidate();
+            }
+        }
         public string CurrentPath { get; set; }
         public Bitmap Canvas
         {
@@ -80,6 +92,7 @@ namespace MDIPaint
         {
             if (e.Button == MouseButtons.Left)
             {
+                isModified = true;
                 using (var pen = new Pen(MainForm.CurrentColor, MainForm.CurrentWidth))
                 {
                     var g = Graphics.FromImage(bitmapTemp);
@@ -166,7 +179,17 @@ namespace MDIPaint
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.DrawImage(bitmapTemp, 0, 0);
+            //e.Graphics.DrawImage(bitmapTemp, 0, 0);
+            e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+            int newWidth = (int)(bitmapTemp.Width * CurrentScaling);
+            int newHeight = (int)(bitmapTemp.Height * CurrentScaling);
+            int offsetX = (ClientSize.Width - newWidth) / 2;
+            int offsetY = (ClientSize.Height - newHeight) / 2;
+
+            e.Graphics.DrawImage(bitmapTemp, new Rectangle(offsetX, offsetY, newWidth, newHeight));
         }
 
         private void FormDocument_MouseLeave(object sender, EventArgs e)
@@ -229,6 +252,56 @@ namespace MDIPaint
                     break;
             }
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
 
+            if (isModified)
+            {
+                var result = MessageBox.Show(
+                    "Вы хотите сохранить вашу работу?",
+                    "Есть несохранённые изменения в файле!",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    if (string.IsNullOrEmpty(CurrentPath))
+                    {
+                        using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                        {
+                            saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg;*.jpeg|Bitmap Image|*.bmp|GIF Image|*.gif";
+                            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                SaveAs(saveFileDialog.FileName);
+                                isModified = false;
+                            }
+                            else
+                            {
+                                e.Cancel = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        SaveAs(CurrentPath);
+                        isModified = false;
+                    }
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+        public void ZoomIn()
+        {
+            CurrentScaling *= 1.1f;
+        }
+        public void ZoomOut()
+        {
+            CurrentScaling /= 1.1f;
+        }
     }
 }

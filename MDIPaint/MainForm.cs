@@ -373,5 +373,23 @@ namespace MDIPaint
             сверхуВнизToolStripMenuItem.Enabled = d != null;
             упорядочитьЗначкиToolStripMenuItem.Enabled = d != null;
         }
+
+        private void zoomOutButton_Click(object sender, EventArgs e)
+        {
+            var d = ActiveMdiChild as FormDocument;
+            if (d != null)
+            {
+                d.ZoomOut();
+            }
+        }
+
+        private void zoomInButton_Click(object sender, EventArgs e)
+        {
+            var d = ActiveMdiChild as FormDocument;
+            if (d != null)
+            {
+                d.ZoomIn();
+            }
+        }
     }
 }
