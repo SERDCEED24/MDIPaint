@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormConfigureStar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigureStar.Designer.cs">
+      <DependentUpon>FormConfigureStar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInputText.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigureStar.resx">
+      <DependentUpon>FormConfigureStar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDocument.resx">
       <DependentUpon>FormDocument.cs</DependentUpon>
@@ -194,6 +203,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fill_cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_star_cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_cursor.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

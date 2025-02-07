@@ -205,6 +205,26 @@ namespace MDIPaint
                                 g.FillEllipse(brush, new Rectangle(Math.Min(x, e.X), Math.Min(y, e.Y), Math.Abs(e.X - x), Math.Abs(e.Y - y)));
                             }
                             break;
+                        case Tools.Star:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            int width = Math.Abs(e.X - x);
+                            int height = Math.Abs(e.Y - y);
+                            int outerRadius = Math.Min(width, height) / 2;
+                            int innerRadius = (int)(outerRadius * MainForm.CurrentStarRadiusRatio);
+                            PointF[] starPoints = GetStarPoints(x, y, MainForm.CurrentStarRays, innerRadius, outerRadius);
+                            g.DrawPolygon(new Pen(MainForm.CurrentColor, 2), starPoints);
+                            break;
+                        case Tools.FilledStar:
+                            bitmapTemp = (Bitmap)bitmap.Clone();
+                            g = Graphics.FromImage(bitmapTemp);
+                            width = Math.Abs(e.X - x);
+                            height = Math.Abs(e.Y - y);
+                            outerRadius = Math.Min(width, height) / 2;
+                            innerRadius = (int)(outerRadius * MainForm.CurrentStarRadiusRatio);
+                            starPoints = GetStarPoints(x, y, MainForm.CurrentStarRays, innerRadius, outerRadius);
+                            g.FillPolygon(new SolidBrush(MainForm.CurrentColor), starPoints);
+                            break;
                     }
 
                 }
@@ -276,6 +296,24 @@ namespace MDIPaint
             UpdateCursor();
         }
 
+        private PointF[] GetStarPoints(int cx, int cy, int rays, float innerRadius, float outerRadius)
+        {
+            double angleStep = Math.PI / rays;
+            List<PointF> points = new List<PointF>();
+
+            for (int i = 0; i < rays * 2; i++)
+            {
+                double angle = i * angleStep;
+                float radius = (i % 2 == 0) ? outerRadius : innerRadius;
+                float x = cx + (float)(Math.Cos(angle) * radius);
+                float y = cy + (float)(Math.Sin(angle) * radius);
+                points.Add(new PointF(x, y));
+            }
+
+            return points.ToArray();
+        }
+
+
         public void UpdateCursor()
         {
             switch (MainForm.CurrentTool)
@@ -306,6 +344,12 @@ namespace MDIPaint
                     break;
                 case Tools.Fill:
                     this.Cursor = new Cursor(new MemoryStream(Resources.fill_cursor));
+                    break;
+                case Tools.Star:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.star_cursor));
+                    break;
+                case Tools.FilledStar:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.filled_star_cursor));
                     break;
                 default:
                     this.Cursor = Cursors.Default;

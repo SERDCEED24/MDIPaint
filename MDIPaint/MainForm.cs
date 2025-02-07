@@ -47,6 +47,8 @@ namespace MDIPaint
             }
         }
         public static Font CurrentFont { get; set; }
+        public static int CurrentStarRays { get; set; }
+        public static float CurrentStarRadiusRatio { get; set; }
         public MainForm()
         {
             InitializeComponent();
@@ -54,6 +56,8 @@ namespace MDIPaint
             CurrentWidth = 1;
             CurrentTool = Tools.Pen;
             CurrentFont = new Font("Arial", 32);
+            CurrentStarRadiusRatio = 0.5f;
+            CurrentStarRays = 5;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -396,11 +400,11 @@ namespace MDIPaint
 
         private void manageFontButton_Click(object sender, EventArgs e)
         {
-            using (FontDialog fontDialog = new FontDialog())
+            using (var dlg = new FontDialog())
             {
-                if (fontDialog.ShowDialog() == DialogResult.OK)
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    CurrentFont = fontDialog.Font;
+                    CurrentFont = dlg.Font;
                 }
             }
         }
@@ -413,6 +417,28 @@ namespace MDIPaint
         private void bucketOfPaintButton_Click(object sender, EventArgs e)
         {
             CurrentTool = Tools.Fill;
+        }
+
+        private void chooseStarButton_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.Star;
+        }
+
+        private void chooseFilledStarButton_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.FilledStar;
+        }
+
+        private void setupStarButton_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new FormConfigureStar(CurrentStarRays, CurrentStarRadiusRatio))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    CurrentStarRays = dlg.NumberOfRays;
+                    CurrentStarRadiusRatio = dlg.RadiusRatio;
+                }
+            }
         }
     }
 }

@@ -77,6 +77,9 @@
             this.chooseFilledCircle = new System.Windows.Forms.ToolStripButton();
             this.chooseRectangle = new System.Windows.Forms.ToolStripButton();
             this.chooseFilledRectangle = new System.Windows.Forms.ToolStripButton();
+            this.chooseStarButton = new System.Windows.Forms.ToolStripButton();
+            this.chooseFilledStarButton = new System.Windows.Forms.ToolStripButton();
+            this.setupStarButton = new System.Windows.Forms.ToolStripButton();
             this.chooseTextButton = new System.Windows.Forms.ToolStripButton();
             this.zoomInButton = new System.Windows.Forms.ToolStripButton();
             this.zoomOutButton = new System.Windows.Forms.ToolStripButton();
@@ -136,7 +139,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(338, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(509, 6);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -158,7 +161,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(338, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(509, 6);
             // 
             // выходToolStripMenuItem
             // 
@@ -261,6 +264,9 @@
             this.chooseFilledCircle,
             this.chooseRectangle,
             this.chooseFilledRectangle,
+            this.chooseStarButton,
+            this.chooseFilledStarButton,
+            this.setupStarButton,
             this.chooseTextButton,
             this.zoomInButton,
             this.zoomOutButton,
@@ -537,6 +543,39 @@
             this.chooseFilledRectangle.ToolTipText = "Выбрать инструмент закрашенный прямоугольник";
             this.chooseFilledRectangle.Click += new System.EventHandler(this.chooseFilledRectangle_Click);
             // 
+            // chooseStarButton
+            // 
+            this.chooseStarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.chooseStarButton.Image = global::MDIPaint.Properties.Resources.star;
+            this.chooseStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chooseStarButton.Name = "chooseStarButton";
+            this.chooseStarButton.Size = new System.Drawing.Size(34, 33);
+            this.chooseStarButton.Text = "toolStripButton1";
+            this.chooseStarButton.ToolTipText = "Выбрать инструмент звезда";
+            this.chooseStarButton.Click += new System.EventHandler(this.chooseStarButton_Click);
+            // 
+            // chooseFilledStarButton
+            // 
+            this.chooseFilledStarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.chooseFilledStarButton.Image = global::MDIPaint.Properties.Resources.star_filled;
+            this.chooseFilledStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chooseFilledStarButton.Name = "chooseFilledStarButton";
+            this.chooseFilledStarButton.Size = new System.Drawing.Size(34, 33);
+            this.chooseFilledStarButton.Text = "toolStripButton1";
+            this.chooseFilledStarButton.ToolTipText = "Выбрать инструмент закрашенная звезда";
+            this.chooseFilledStarButton.Click += new System.EventHandler(this.chooseFilledStarButton_Click);
+            // 
+            // setupStarButton
+            // 
+            this.setupStarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.setupStarButton.Image = global::MDIPaint.Properties.Resources.star_settings;
+            this.setupStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.setupStarButton.Name = "setupStarButton";
+            this.setupStarButton.Size = new System.Drawing.Size(34, 33);
+            this.setupStarButton.Text = "toolStripButton1";
+            this.setupStarButton.ToolTipText = "Настроить инструмент звезда";
+            this.setupStarButton.Click += new System.EventHandler(this.setupStarButton_Click);
+            // 
             // chooseTextButton
             // 
             this.chooseTextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -663,6 +702,9 @@
         private System.Windows.Forms.ToolStripButton chooseTextButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton bucketOfPaintButton;
+        private System.Windows.Forms.ToolStripButton chooseStarButton;
+        private System.Windows.Forms.ToolStripButton chooseFilledStarButton;
+        private System.Windows.Forms.ToolStripButton setupStarButton;
     }
 }
 

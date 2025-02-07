@@ -44,8 +44,16 @@ namespace MDIPaint
         /// </summary>
         Text,
         /// <summary>
-        /// Текст
+        /// Заливка
         /// </summary>
-        Fill
+        Fill,
+        /// <summary>
+        /// Star
+        /// </summary>
+        Star,
+        /// <summary>
+        /// Закрашенная звезда
+        /// </summary>
+        FilledStar
     }
 }
