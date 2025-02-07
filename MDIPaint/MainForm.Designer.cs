@@ -53,6 +53,7 @@
             this.statusLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusLabelColor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectRedColor = new System.Windows.Forms.ToolStripButton();
             this.selectGreenColor = new System.Windows.Forms.ToolStripButton();
             this.selectBlueColor = new System.Windows.Forms.ToolStripButton();
@@ -68,6 +69,7 @@
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageFontButton = new System.Windows.Forms.ToolStripButton();
             this.choosePen = new System.Windows.Forms.ToolStripButton();
             this.chooseEraser = new System.Windows.Forms.ToolStripButton();
             this.chooseLine = new System.Windows.Forms.ToolStripButton();
@@ -75,6 +77,7 @@
             this.chooseFilledCircle = new System.Windows.Forms.ToolStripButton();
             this.chooseRectangle = new System.Windows.Forms.ToolStripButton();
             this.chooseFilledRectangle = new System.Windows.Forms.ToolStripButton();
+            this.chooseTextButton = new System.Windows.Forms.ToolStripButton();
             this.zoomOutButton = new System.Windows.Forms.ToolStripButton();
             this.zoomInButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
@@ -94,7 +97,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.окноToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -248,6 +251,7 @@
             this.selectBlueColor,
             this.selectAnyColor,
             this.choosePenWidth,
+            this.manageFontButton,
             this.toolStripSeparator3,
             this.choosePen,
             this.chooseEraser,
@@ -256,11 +260,13 @@
             this.chooseFilledCircle,
             this.chooseRectangle,
             this.chooseFilledRectangle,
+            this.chooseTextButton,
+            this.toolStripSeparator4,
             this.zoomOutButton,
             this.zoomInButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -299,13 +305,18 @@
             this.statusLabelPosition.Name = "statusLabelPosition";
             this.statusLabelPosition.Size = new System.Drawing.Size(0, 25);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
+            // 
             // selectRedColor
             // 
             this.selectRedColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.selectRedColor.Image = ((System.Drawing.Image)(resources.GetObject("selectRedColor.Image")));
             this.selectRedColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectRedColor.Name = "selectRedColor";
-            this.selectRedColor.Size = new System.Drawing.Size(34, 33);
+            this.selectRedColor.Size = new System.Drawing.Size(34, 28);
             this.selectRedColor.Text = "toolStripButton1";
             this.selectRedColor.ToolTipText = "Выбрать красный цвет";
             this.selectRedColor.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -435,6 +446,17 @@
             this.toolStripMenuItem11.Text = "10";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
+            // manageFontButton
+            // 
+            this.manageFontButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.manageFontButton.Image = global::MDIPaint.Properties.Resources.font_size;
+            this.manageFontButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.manageFontButton.Name = "manageFontButton";
+            this.manageFontButton.Size = new System.Drawing.Size(34, 28);
+            this.manageFontButton.Text = "toolStripButton2";
+            this.manageFontButton.ToolTipText = "Настроить шрифт";
+            this.manageFontButton.Click += new System.EventHandler(this.manageFontButton_Click);
+            // 
             // choosePen
             // 
             this.choosePen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -511,6 +533,17 @@
             this.chooseFilledRectangle.Text = "toolStripButton2";
             this.chooseFilledRectangle.ToolTipText = "Выбрать инструмент закрашенный прямоугольник";
             this.chooseFilledRectangle.Click += new System.EventHandler(this.chooseFilledRectangle_Click);
+            // 
+            // chooseTextButton
+            // 
+            this.chooseTextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.chooseTextButton.Image = global::MDIPaint.Properties.Resources.text;
+            this.chooseTextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chooseTextButton.Name = "chooseTextButton";
+            this.chooseTextButton.Size = new System.Drawing.Size(34, 28);
+            this.chooseTextButton.Text = "chooseTextButton";
+            this.chooseTextButton.ToolTipText = "Выбрать инструмент текст";
+            this.chooseTextButton.Click += new System.EventHandler(this.chooseTextButton_Click);
             // 
             // zoomOutButton
             // 
@@ -610,6 +643,9 @@
         private System.Windows.Forms.ToolStripButton chooseFilledRectangle;
         private System.Windows.Forms.ToolStripButton zoomOutButton;
         private System.Windows.Forms.ToolStripButton zoomInButton;
+        private System.Windows.Forms.ToolStripButton manageFontButton;
+        private System.Windows.Forms.ToolStripButton chooseTextButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

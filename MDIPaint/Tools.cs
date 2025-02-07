@@ -38,6 +38,10 @@ namespace MDIPaint
         /// <summary>
         /// Закрашенный прямоугольник
         /// </summary>
-        FilledRectangle
+        FilledRectangle,
+        /// <summary>
+        /// Текст
+        /// </summary>
+        Text
     }
 }

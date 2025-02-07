@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInputText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputText.Designer.cs">
+      <DependentUpon>FormInputText.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormResizeImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDocument.resx">
       <DependentUpon>FormDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInputText.resx">
+      <DependentUpon>FormInputText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormResizeImage.resx">
       <DependentUpon>FormResizeImage.cs</DependentUpon>
@@ -170,6 +179,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font-size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_cursor.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

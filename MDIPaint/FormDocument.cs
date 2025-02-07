@@ -85,6 +85,31 @@ namespace MDIPaint
             {
                 x = e.X;
                 y = e.Y;
+                if (MainForm.CurrentTool == Tools.Text)
+                {
+
+                    using (var dlg = new FormInputText())
+                    {
+                        if (dlg.ShowDialog() == DialogResult.OK)
+                        {
+                            string textToPlace = dlg.UserInput;
+                            if (!string.IsNullOrWhiteSpace(textToPlace))
+                            {
+                                using (Graphics g = Graphics.FromImage(bitmapTemp))
+                                {
+                                    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                                    using (Brush textBrush = new SolidBrush(MainForm.CurrentColor))
+                                    {
+                                        g.DrawString(textToPlace, MainForm.CurrentFont, textBrush, x, y);
+                                    }
+                                }
+                                isModified = true;
+                                Invalidate();
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
@@ -179,7 +204,6 @@ namespace MDIPaint
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            //e.Graphics.DrawImage(bitmapTemp, 0, 0);
             e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -246,6 +270,9 @@ namespace MDIPaint
                     break;
                 case Tools.Line:
                     this.Cursor = new Cursor(new MemoryStream(Resources.line_cursor));
+                    break;
+                case Tools.Text:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.text_cursor));
                     break;
                 default:
                     this.Cursor = Cursors.Default;

@@ -173,6 +173,16 @@ namespace MDIPaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap font_size {
+            get {
+                object obj = ResourceManager.GetObject("font-size", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GreenColorIcon {
             get {
                 object obj = ResourceManager.GetObject("GreenColorIcon", resourceCulture);
@@ -247,6 +257,26 @@ namespace MDIPaint.Properties {
             get {
                 object obj = ResourceManager.GetObject("ruler", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap text {
+            get {
+                object obj = ResourceManager.GetObject("text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_cursor {
+            get {
+                object obj = ResourceManager.GetObject("text_cursor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

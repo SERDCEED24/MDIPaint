@@ -46,12 +46,14 @@ namespace MDIPaint
                 //ShowCursor();
             }
         }
+        public static Font CurrentFont { get; set; }
         public MainForm()
         {
             InitializeComponent();
             CurrentColor = Color.Black;
             CurrentWidth = 1;
             CurrentTool = Tools.Pen;
+            CurrentFont = new Font("Arial", 32);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -390,6 +392,22 @@ namespace MDIPaint
             {
                 d.ZoomIn();
             }
+        }
+
+        private void manageFontButton_Click(object sender, EventArgs e)
+        {
+            using (FontDialog fontDialog = new FontDialog())
+            {
+                if (fontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    CurrentFont = fontDialog.Font;
+                }
+            }
+        }
+
+        private void chooseTextButton_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.Text;
         }
     }
 }
