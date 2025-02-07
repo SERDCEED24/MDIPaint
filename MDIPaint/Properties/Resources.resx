@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="filled_star_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filled_star_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlueColorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueColorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fill_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fill_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="line_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BlueColorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BlueColorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="diagonal-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagonal-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="star_filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star_filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +157,9 @@
   <data name="filled_rectangle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filled_rectangle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="star_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="filled_circle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filled_circle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -160,14 +169,14 @@
   <data name="rectangular-shape-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rectangular-shape-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="star_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ruler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ruler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eraser_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rectangle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rectangle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,9 +193,6 @@
   <data name="ColorSelectionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorSelectionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="diagonal-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diagonal-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,13 +208,10 @@
   <data name="text_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="star_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star_settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filled_star_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filled_star_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="star_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="rectangle_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rectangle_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

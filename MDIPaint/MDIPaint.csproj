@@ -181,9 +181,6 @@
     <None Include="Resources\pen_cursor.cur" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rectangle_cursor.cur" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\zoom-out.png" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\star_cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle_cursor.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

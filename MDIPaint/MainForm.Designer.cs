@@ -48,12 +48,6 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusLabelColor = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectRedColor = new System.Windows.Forms.ToolStripButton();
             this.selectGreenColor = new System.Windows.Forms.ToolStripButton();
             this.selectBlueColor = new System.Windows.Forms.ToolStripButton();
@@ -70,6 +64,7 @@
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageFontButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.choosePen = new System.Windows.Forms.ToolStripButton();
             this.chooseEraser = new System.Windows.Forms.ToolStripButton();
             this.chooseLine = new System.Windows.Forms.ToolStripButton();
@@ -83,7 +78,12 @@
             this.chooseTextButton = new System.Windows.Forms.ToolStripButton();
             this.zoomInButton = new System.Windows.Forms.ToolStripButton();
             this.zoomOutButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.bucketOfPaintButton = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusLabelSize = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLabelColor = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -101,7 +101,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.окноToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +116,7 @@
             this.toolStripSeparator2,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 30);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.файлToolStripMenuItem.Text = "&Файл";
             this.файлToolStripMenuItem.DropDownOpening += new System.EventHandler(this.файлToolStripMenuItem_DropDownOpening);
             // 
@@ -139,7 +139,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(509, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(338, 6);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -161,7 +161,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(509, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(338, 6);
             // 
             // выходToolStripMenuItem
             // 
@@ -176,7 +176,7 @@
             this.рисунокToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.размерХолстаToolStripMenuItem});
             this.рисунокToolStripMenuItem.Name = "рисунокToolStripMenuItem";
-            this.рисунокToolStripMenuItem.Size = new System.Drawing.Size(95, 30);
+            this.рисунокToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.рисунокToolStripMenuItem.Text = "&Рисунок";
             this.рисунокToolStripMenuItem.DropDownOpening += new System.EventHandler(this.рисунокToolStripMenuItem_DropDownOpening);
             // 
@@ -196,7 +196,7 @@
             this.сверхуВнизToolStripMenuItem,
             this.упорядочитьЗначкиToolStripMenuItem});
             this.окноToolStripMenuItem.Name = "окноToolStripMenuItem";
-            this.окноToolStripMenuItem.Size = new System.Drawing.Size(72, 30);
+            this.окноToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.окноToolStripMenuItem.Text = "&Окно";
             this.окноToolStripMenuItem.DropDownOpening += new System.EventHandler(this.окноToolStripMenuItem_DropDownOpening);
             // 
@@ -235,7 +235,7 @@
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(97, 30);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(97, 29);
             this.справкаToolStripMenuItem.Text = "&Справка";
             // 
             // оПрограммеToolStripMenuItem
@@ -272,52 +272,11 @@
             this.zoomOutButton,
             this.toolStripSeparator4,
             this.bucketOfPaintButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 33);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 38);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabelSize,
-            this.statusLabelColor,
-            this.statusLabelPosition});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 32);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // statusLabelSize
-            // 
-            this.statusLabelSize.Name = "statusLabelSize";
-            this.statusLabelSize.Size = new System.Drawing.Size(135, 25);
-            this.statusLabelSize.Text = "Размер пера: 1";
-            // 
-            // statusLabelColor
-            // 
-            this.statusLabelColor.Name = "statusLabelColor";
-            this.statusLabelColor.Size = new System.Drawing.Size(144, 25);
-            this.statusLabelColor.Text = "Цвет пера: Black";
-            // 
-            // statusLabelPosition
-            // 
-            this.statusLabelPosition.Name = "statusLabelPosition";
-            this.statusLabelPosition.Size = new System.Drawing.Size(0, 25);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 38);
             // 
             // selectRedColor
             // 
@@ -325,7 +284,7 @@
             this.selectRedColor.Image = ((System.Drawing.Image)(resources.GetObject("selectRedColor.Image")));
             this.selectRedColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectRedColor.Name = "selectRedColor";
-            this.selectRedColor.Size = new System.Drawing.Size(34, 33);
+            this.selectRedColor.Size = new System.Drawing.Size(34, 28);
             this.selectRedColor.Text = "toolStripButton1";
             this.selectRedColor.ToolTipText = "Выбрать красный цвет";
             this.selectRedColor.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -336,7 +295,7 @@
             this.selectGreenColor.Image = global::MDIPaint.Properties.Resources.GreenColorIcon;
             this.selectGreenColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectGreenColor.Name = "selectGreenColor";
-            this.selectGreenColor.Size = new System.Drawing.Size(34, 33);
+            this.selectGreenColor.Size = new System.Drawing.Size(34, 28);
             this.selectGreenColor.Text = "selectGreenColor";
             this.selectGreenColor.ToolTipText = "Выбрать зелёный цвет";
             this.selectGreenColor.Click += new System.EventHandler(this.toolStripButton2_Click);
@@ -347,7 +306,7 @@
             this.selectBlueColor.Image = global::MDIPaint.Properties.Resources.BlueColorIcon;
             this.selectBlueColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectBlueColor.Name = "selectBlueColor";
-            this.selectBlueColor.Size = new System.Drawing.Size(34, 33);
+            this.selectBlueColor.Size = new System.Drawing.Size(34, 28);
             this.selectBlueColor.Text = "selectBlueColor";
             this.selectBlueColor.ToolTipText = "Выбрать синий цвет";
             this.selectBlueColor.Click += new System.EventHandler(this.toolStripButton3_Click);
@@ -358,7 +317,7 @@
             this.selectAnyColor.Image = global::MDIPaint.Properties.Resources.ColorSelectionIcon;
             this.selectAnyColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.selectAnyColor.Name = "selectAnyColor";
-            this.selectAnyColor.Size = new System.Drawing.Size(34, 33);
+            this.selectAnyColor.Size = new System.Drawing.Size(34, 28);
             this.selectAnyColor.Text = "selectAnyColor";
             this.selectAnyColor.ToolTipText = "Выбрать любой цвет";
             this.selectAnyColor.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -380,7 +339,7 @@
             this.choosePenWidth.Image = global::MDIPaint.Properties.Resources.ruler;
             this.choosePenWidth.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.choosePenWidth.Name = "choosePenWidth";
-            this.choosePenWidth.Size = new System.Drawing.Size(42, 33);
+            this.choosePenWidth.Size = new System.Drawing.Size(42, 28);
             this.choosePenWidth.Text = "choosePenWidth";
             this.choosePenWidth.ToolTipText = "Выбрать размер кисти";
             this.choosePenWidth.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
@@ -461,10 +420,15 @@
             this.manageFontButton.Image = global::MDIPaint.Properties.Resources.font_size;
             this.manageFontButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.manageFontButton.Name = "manageFontButton";
-            this.manageFontButton.Size = new System.Drawing.Size(34, 33);
+            this.manageFontButton.Size = new System.Drawing.Size(34, 28);
             this.manageFontButton.Text = "toolStripButton2";
             this.manageFontButton.ToolTipText = "Настроить шрифт";
             this.manageFontButton.Click += new System.EventHandler(this.manageFontButton_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 33);
             // 
             // choosePen
             // 
@@ -472,7 +436,7 @@
             this.choosePen.Image = global::MDIPaint.Properties.Resources.feather;
             this.choosePen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.choosePen.Name = "choosePen";
-            this.choosePen.Size = new System.Drawing.Size(34, 33);
+            this.choosePen.Size = new System.Drawing.Size(34, 28);
             this.choosePen.Text = "Перо";
             this.choosePen.ToolTipText = "Выбрать инструмент перо";
             this.choosePen.Click += new System.EventHandler(this.choosePen_Click);
@@ -483,7 +447,7 @@
             this.chooseEraser.Image = global::MDIPaint.Properties.Resources.eraser;
             this.chooseEraser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseEraser.Name = "chooseEraser";
-            this.chooseEraser.Size = new System.Drawing.Size(34, 33);
+            this.chooseEraser.Size = new System.Drawing.Size(34, 28);
             this.chooseEraser.Text = "toolStripButton1";
             this.chooseEraser.ToolTipText = "Выбрать инструмент ластик";
             this.chooseEraser.Click += new System.EventHandler(this.chooseEraser_Click);
@@ -494,7 +458,7 @@
             this.chooseLine.Image = global::MDIPaint.Properties.Resources.diagonal_line;
             this.chooseLine.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseLine.Name = "chooseLine";
-            this.chooseLine.Size = new System.Drawing.Size(34, 33);
+            this.chooseLine.Size = new System.Drawing.Size(34, 28);
             this.chooseLine.Text = "toolStripButton1";
             this.chooseLine.ToolTipText = "Выбрать инструмент линия";
             this.chooseLine.Click += new System.EventHandler(this.chooseLine_Click);
@@ -505,7 +469,7 @@
             this.chooseCircle.Image = global::MDIPaint.Properties.Resources.dry_clean;
             this.chooseCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseCircle.Name = "chooseCircle";
-            this.chooseCircle.Size = new System.Drawing.Size(34, 33);
+            this.chooseCircle.Size = new System.Drawing.Size(34, 28);
             this.chooseCircle.Text = "Окружность";
             this.chooseCircle.ToolTipText = "Выбрать инструмент окружность";
             this.chooseCircle.Click += new System.EventHandler(this.chooseCircle_Click);
@@ -516,7 +480,7 @@
             this.chooseFilledCircle.Image = global::MDIPaint.Properties.Resources.circle;
             this.chooseFilledCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseFilledCircle.Name = "chooseFilledCircle";
-            this.chooseFilledCircle.Size = new System.Drawing.Size(34, 33);
+            this.chooseFilledCircle.Size = new System.Drawing.Size(34, 28);
             this.chooseFilledCircle.Text = "toolStripButton1";
             this.chooseFilledCircle.ToolTipText = "Выбрать инструмент закрашенная окружность";
             this.chooseFilledCircle.Click += new System.EventHandler(this.chooseFilledCircle_Click);
@@ -524,10 +488,10 @@
             // chooseRectangle
             // 
             this.chooseRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.chooseRectangle.Image = global::MDIPaint.Properties.Resources.rectangular_shape_outline;
+            this.chooseRectangle.Image = global::MDIPaint.Properties.Resources.rectangle;
             this.chooseRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseRectangle.Name = "chooseRectangle";
-            this.chooseRectangle.Size = new System.Drawing.Size(34, 33);
+            this.chooseRectangle.Size = new System.Drawing.Size(34, 28);
             this.chooseRectangle.Text = "Прямоугольник";
             this.chooseRectangle.ToolTipText = "Выбрать инструмент прямоугольник";
             this.chooseRectangle.Click += new System.EventHandler(this.chooseRectangle_Click);
@@ -538,7 +502,7 @@
             this.chooseFilledRectangle.Image = global::MDIPaint.Properties.Resources.rectangleF;
             this.chooseFilledRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseFilledRectangle.Name = "chooseFilledRectangle";
-            this.chooseFilledRectangle.Size = new System.Drawing.Size(34, 33);
+            this.chooseFilledRectangle.Size = new System.Drawing.Size(34, 28);
             this.chooseFilledRectangle.Text = "toolStripButton2";
             this.chooseFilledRectangle.ToolTipText = "Выбрать инструмент закрашенный прямоугольник";
             this.chooseFilledRectangle.Click += new System.EventHandler(this.chooseFilledRectangle_Click);
@@ -549,7 +513,7 @@
             this.chooseStarButton.Image = global::MDIPaint.Properties.Resources.star;
             this.chooseStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseStarButton.Name = "chooseStarButton";
-            this.chooseStarButton.Size = new System.Drawing.Size(34, 33);
+            this.chooseStarButton.Size = new System.Drawing.Size(34, 28);
             this.chooseStarButton.Text = "toolStripButton1";
             this.chooseStarButton.ToolTipText = "Выбрать инструмент звезда";
             this.chooseStarButton.Click += new System.EventHandler(this.chooseStarButton_Click);
@@ -560,7 +524,7 @@
             this.chooseFilledStarButton.Image = global::MDIPaint.Properties.Resources.star_filled;
             this.chooseFilledStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseFilledStarButton.Name = "chooseFilledStarButton";
-            this.chooseFilledStarButton.Size = new System.Drawing.Size(34, 33);
+            this.chooseFilledStarButton.Size = new System.Drawing.Size(34, 28);
             this.chooseFilledStarButton.Text = "toolStripButton1";
             this.chooseFilledStarButton.ToolTipText = "Выбрать инструмент закрашенная звезда";
             this.chooseFilledStarButton.Click += new System.EventHandler(this.chooseFilledStarButton_Click);
@@ -571,7 +535,7 @@
             this.setupStarButton.Image = global::MDIPaint.Properties.Resources.star_settings;
             this.setupStarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.setupStarButton.Name = "setupStarButton";
-            this.setupStarButton.Size = new System.Drawing.Size(34, 33);
+            this.setupStarButton.Size = new System.Drawing.Size(34, 28);
             this.setupStarButton.Text = "toolStripButton1";
             this.setupStarButton.ToolTipText = "Настроить инструмент звезда";
             this.setupStarButton.Click += new System.EventHandler(this.setupStarButton_Click);
@@ -582,7 +546,7 @@
             this.chooseTextButton.Image = global::MDIPaint.Properties.Resources.text;
             this.chooseTextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.chooseTextButton.Name = "chooseTextButton";
-            this.chooseTextButton.Size = new System.Drawing.Size(34, 33);
+            this.chooseTextButton.Size = new System.Drawing.Size(34, 28);
             this.chooseTextButton.Text = "chooseTextButton";
             this.chooseTextButton.ToolTipText = "Выбрать инструмент текст";
             this.chooseTextButton.Click += new System.EventHandler(this.chooseTextButton_Click);
@@ -594,7 +558,7 @@
             this.zoomInButton.Image = global::MDIPaint.Properties.Resources.zoom_in;
             this.zoomInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.zoomInButton.Name = "zoomInButton";
-            this.zoomInButton.Size = new System.Drawing.Size(34, 33);
+            this.zoomInButton.Size = new System.Drawing.Size(34, 28);
             this.zoomInButton.Text = "toolStripButton2";
             this.zoomInButton.ToolTipText = "Увеличить масштаб изображения";
             this.zoomInButton.Click += new System.EventHandler(this.zoomInButton_Click);
@@ -606,10 +570,16 @@
             this.zoomOutButton.Image = global::MDIPaint.Properties.Resources.zoom_out;
             this.zoomOutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.zoomOutButton.Name = "zoomOutButton";
-            this.zoomOutButton.Size = new System.Drawing.Size(34, 33);
+            this.zoomOutButton.Size = new System.Drawing.Size(34, 28);
             this.zoomOutButton.Text = "toolStripButton1";
             this.zoomOutButton.ToolTipText = "Уменьшить масштаб изображения";
             this.zoomOutButton.Click += new System.EventHandler(this.zoomOutButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 33);
             // 
             // bucketOfPaintButton
             // 
@@ -617,10 +587,40 @@
             this.bucketOfPaintButton.Image = global::MDIPaint.Properties.Resources.fill;
             this.bucketOfPaintButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bucketOfPaintButton.Name = "bucketOfPaintButton";
-            this.bucketOfPaintButton.Size = new System.Drawing.Size(34, 33);
+            this.bucketOfPaintButton.Size = new System.Drawing.Size(34, 28);
             this.bucketOfPaintButton.Text = "toolStripButton1";
             this.bucketOfPaintButton.ToolTipText = "Выбрать инструмент ведро с краской";
             this.bucketOfPaintButton.Click += new System.EventHandler(this.bucketOfPaintButton_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabelSize,
+            this.statusLabelColor,
+            this.statusLabelPosition});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 32);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // statusLabelSize
+            // 
+            this.statusLabelSize.Name = "statusLabelSize";
+            this.statusLabelSize.Size = new System.Drawing.Size(135, 25);
+            this.statusLabelSize.Text = "Размер пера: 1";
+            // 
+            // statusLabelColor
+            // 
+            this.statusLabelColor.Name = "statusLabelColor";
+            this.statusLabelColor.Size = new System.Drawing.Size(144, 25);
+            this.statusLabelColor.Text = "Цвет пера: Black";
+            // 
+            // statusLabelPosition
+            // 
+            this.statusLabelPosition.Name = "statusLabelPosition";
+            this.statusLabelPosition.Size = new System.Drawing.Size(0, 25);
             // 
             // MainForm
             // 
