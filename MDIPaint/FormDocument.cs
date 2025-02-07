@@ -110,9 +110,39 @@ namespace MDIPaint
                     }
 
                 }
+                if (MainForm.CurrentTool == Tools.Fill)
+                {
+                    FillСlosedArea(bitmapTemp, e.X, e.Y, MainForm.CurrentColor);
+                    isModified = true;
+                }
             }
         }
+        private void FillСlosedArea(Bitmap bmp, int x, int y, Color newColor)
+        {
+            Color oldColor = bmp.GetPixel(x, y);
+            if (oldColor.ToArgb() == newColor.ToArgb()) return;
 
+            Queue<Point> pixels = new Queue<Point>();
+            pixels.Enqueue(new Point(x, y));
+
+            while (pixels.Count > 0)
+            {
+                Point p = pixels.Dequeue();
+                if (p.X < 0 || p.X >= bmp.Width || p.Y < 0 || p.Y >= bmp.Height)
+                    continue;
+                if (bmp.GetPixel(p.X, p.Y) != oldColor)
+                    continue;
+
+                bmp.SetPixel(p.X, p.Y, newColor);
+
+                pixels.Enqueue(new Point(p.X + 1, p.Y));
+                pixels.Enqueue(new Point(p.X - 1, p.Y));
+                pixels.Enqueue(new Point(p.X, p.Y + 1));
+                pixels.Enqueue(new Point(p.X, p.Y - 1));
+            }
+
+            Invalidate();
+        }
         private void FormDocument_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -273,6 +303,9 @@ namespace MDIPaint
                     break;
                 case Tools.Text:
                     this.Cursor = new Cursor(new MemoryStream(Resources.text_cursor));
+                    break;
+                case Tools.Fill:
+                    this.Cursor = new Cursor(new MemoryStream(Resources.fill_cursor));
                     break;
                 default:
                     this.Cursor = Cursors.Default;

@@ -42,6 +42,10 @@ namespace MDIPaint
         /// <summary>
         /// Текст
         /// </summary>
-        Text
+        Text,
+        /// <summary>
+        /// Текст
+        /// </summary>
+        Fill
     }
 }

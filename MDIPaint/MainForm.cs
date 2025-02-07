@@ -409,5 +409,10 @@ namespace MDIPaint
         {
             CurrentTool = Tools.Text;
         }
+
+        private void bucketOfPaintButton_Click(object sender, EventArgs e)
+        {
+            CurrentTool = Tools.Fill;
+        }
     }
 }
